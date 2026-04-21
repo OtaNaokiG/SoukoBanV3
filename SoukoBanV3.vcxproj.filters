@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Scenes">
+      <UniqueIdentifier>{96168ef3-5963-4790-bafc-6a768e266779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scenes\Stages">
+      <UniqueIdentifier>{1f48d44b-cfb2-46da-b0bc-b1d031049a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Managers">
+      <UniqueIdentifier>{289d4f4b-1dfe-4dd2-94e9-c010eba1f3dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Functions">
+      <UniqueIdentifier>{4368ddae-0862-467a-a753-b6c072937a55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Hadles">
+      <UniqueIdentifier>{e7c6784a-48d9-4fb6-ba2b-bbb6fb3f3756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Player">
+      <UniqueIdentifier>{52239af4-67ad-4b65-80a3-fa0dd85db205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Player\Controllers">
+      <UniqueIdentifier>{87971c90-0de0-45b5-b0e7-e10fb3551402}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>ソース ファイル\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectStageScene.cpp">
+      <Filter>ソース ファイル\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="StageManager.cpp">
+      <Filter>ソース ファイル\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="StageBase.cpp">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>ソース ファイル\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Instantiate.cpp">
+      <Filter>ソース ファイル\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Handles.cpp">
+      <Filter>ヘッダー ファイル\Hadles</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>ソース ファイル\Player\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage3.cpp">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage4.cpp">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SceneManager.h">
+      <Filter>ソース ファイル\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>ソース ファイル\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectStageScene.h">
+      <Filter>ソース ファイル\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="StageManager.h">
+      <Filter>ソース ファイル\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="StageBase.h">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Variables.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stages.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>ソース ファイル\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions.h">
+      <Filter>ソース ファイル\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Handles.h">
+      <Filter>ヘッダー ファイル\Hadles</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ソース ファイル\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>ソース ファイル\Player\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage3.h">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage4.h">
+      <Filter>ソース ファイル\Scenes\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="stageHeaders.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
