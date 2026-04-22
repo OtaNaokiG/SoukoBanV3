@@ -10,8 +10,6 @@ private:
 	/// </summary>
 	StageManager stageManager; // © ‚±‚±‚É1‚Â‚¾‚¯
 
-
-
 public:
 	SceneManager();
 	~SceneManager();

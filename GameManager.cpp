@@ -11,6 +11,12 @@ void GameManager::Update() {
 
     input.Update();
 
+    // ” 
+    for (Box* b : boxes) {
+        b->Update();
+    }
+
+
     player->Update(input, this);
 
     UpdateBoxOnGoal();
@@ -44,6 +50,10 @@ void GameManager::Draw() {
     }
 }
 
+
+void GameManager::PlayerGoBack() {
+    player->GoBackOneTile();
+}
 
 void GameManager::SetStageData(const StageData* data) {
     stageData = data;

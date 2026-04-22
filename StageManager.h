@@ -4,6 +4,7 @@
 /// ・ステージが解放されてるか
 /// ・今どのステージか
 /// ・クリアしたか
+/// ・ステージ管理は一個だけ(SceneManagerにある）
 /// </summary>
 class StageManager
 {

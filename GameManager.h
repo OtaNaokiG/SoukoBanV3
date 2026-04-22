@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Input.h"
 #include <vector>
+
 //ゲームの管理
 class GameManager
 {
@@ -29,6 +30,10 @@ private:
 	std::vector<Box*> boxes; // 押せる箱だけ
 
 	Player* player = nullptr;
+
+public:
+	//プレイヤーを一個前のタイルに戻す関数を呼ぶ
+	void PlayerGoBack();
 
 public:
 	void Update();

@@ -4,6 +4,8 @@
 #include "GameManager.h"
 #include"Ui.h"
 
+//ƒ{ƒ^ƒ““ü—Í
+
 class StageBase :public SceneBase {
 
 private:

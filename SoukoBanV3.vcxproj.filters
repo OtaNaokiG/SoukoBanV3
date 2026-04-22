@@ -81,6 +81,9 @@
     <ClCompile Include="Stage4.cpp">
       <Filter>ソース ファイル\Scenes\Stages</Filter>
     </ClCompile>
+    <ClCompile Include="box.cpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneManager.h">

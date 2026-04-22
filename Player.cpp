@@ -4,12 +4,13 @@
 
 
 void Player::Update(Input& input, const GameManager* gm) {
-    MovementController(input, gm);
+    Move(input, gm);
 }
 
 void Player::Draw() {
     GHandle = PFront;
 
+    //画像切替
     switch (dir) {
     case DIR_DOWN:
         GHandle = PFront;
@@ -36,39 +37,38 @@ Player::~Player() {
 }
 
 void Player::MovementController(Input& input, const GameManager* gm) {
+    //動いていたら入力を受け付けない
+    if (!isMoving) {
 
-    //次の座標を加算するため　現在の座標を一時的に保持
-    int nextX = pos.x;
-    int nextY = pos.y;
-
-
-    if (input.Press(KEY_INPUT_RIGHT)) {
-        nextX += TILESIZE;
-        dir = DIR_RIGHT;
+        if (input.Press(KEY_INPUT_RIGHT)) {
+            dir = DIR_RIGHT;
+            TryMove(1, 0, gm);
+        }
+        else if (input.Press(KEY_INPUT_LEFT)) {
+            dir = DIR_LEFT;
+            TryMove(-1, 0, gm);
+        }
+        else if (input.Press(KEY_INPUT_UP)) {
+            dir = DIR_UP;
+            TryMove(0, -1, gm);
+        }
+        else if (input.Press(KEY_INPUT_DOWN)) {
+            dir = DIR_DOWN;
+            TryMove(0, 1, gm);
+        }
     }
+}
 
-    if (input.Press(KEY_INPUT_LEFT)) {
-        nextX -= TILESIZE;
-        dir = DIR_LEFT;
-    }
+void Player::TryMove(int dx, int dy, const GameManager* gm) {
 
-    if (input.Press(KEY_INPUT_UP)) {
-        nextY -= TILESIZE;
-        dir = DIR_UP;
-    }
+    int nextX = pos.x + dx * TILESIZE;
+    int nextY = pos.y + dy * TILESIZE;
 
-    if (input.Press(KEY_INPUT_DOWN)) {
-        nextY += TILESIZE;
-        dir = DIR_DOWN;
-    }
-
-    // マップ座標に変換
+    // 壁チェック
     Vector2 offset = gm->GetMapOffset();
-
     int gridX = (nextX - offset.x) / TILESIZE;
     int gridY = (nextY - offset.y) / TILESIZE;
 
-    // 壁だったら進まない
     if (gm->IsWall(gridX, gridY)) return;
 
     //進む先が箱だったら
@@ -85,16 +85,49 @@ void Player::MovementController(Input& input, const GameManager* gm) {
         if (gm->IsWall(nextBoxX, nextBoxY) || gm->IsBox(nextBoxX, nextBoxY)) {
             return;
         }
-
         // 押せる
-        box->GetPushed(dirVec);
+        box->StartMove(dirVec);
     }
 
-    //移動
-    pos.x = nextX;
-    pos.y = nextY;
+    // 移動開始
+    isMoving = true;
+    moveStart = pos;
+    moveEnd = { nextX, nextY };
+     //移動前の座標と向きを保存
+    history.push({ pos, dir });
+    
 }
 
+void Player::Move(Input& input, const GameManager* gm) {
+    if (isMoving) {
+        // 1フレームごとに少しずつ移動
+        Vector2 diff = moveEnd - pos;//moveEnd - pos で「残り距離」を求める
+
+        if (abs(diff.x) <= objectsSpeed && abs(diff.y) <= objectsSpeed) {
+            pos = moveEnd;
+            isMoving = false;
+        }
+        else {
+            pos.x += (diff.x > 0 ? objectsSpeed : (diff.x < 0 ? -objectsSpeed : 0));
+            pos.y += (diff.y > 0 ? objectsSpeed : (diff.y < 0 ? -objectsSpeed : 0));
+        }
+        return;
+    }
+    // 移動していないときだけ入力を受け付ける
+    MovementController(input, gm);
+}
+
+
+
+void Player::GoBackOneTile() {
+    if (history.empty()) return;
+
+    PlayerState prev = history.top();
+    history.pop();
+
+    pos = prev.pos;
+    dir = prev.dir;
+}
 
 Vector2 Player::DirToVec(Direction dir) {
     switch (dir) {

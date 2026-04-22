@@ -53,12 +53,12 @@ SceneBase* StageBase:: Update() {
 		}
 	}
 	else {
-		if (pauseButton.IsClicked(mouse)) {
-			//É|Å[ÉY
+		if (pauseButton.IsClicked(mouse)) {			
 			isPaused = !isPaused;
+			//í‚é~
 		}
 		if (goBackButton.IsClicked(mouse)) {
-			DrawString(300, 600, "BBBBBBBBBBBBBBBBBBBBBBBBBBBBB!!", GetColor(0, 0, 0));
+			game.PlayerGoBack();
 			//ä™Ç´ñﬂÇµ
 		}
 		if (returnButton.IsClicked(mouse)) {
